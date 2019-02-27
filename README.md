@@ -4,8 +4,8 @@
 |------|----|-------|
 |body|text||
 |image|string||
-|group_up|integer|null: false, foreign_key: true|
-|user_id|integer|null: false, foreign_key: true|
+|group_up|integer|null: false, refference|
+|user_id|integer|null: false, refference|
 
 ### Association
 - belongs_to :group
@@ -28,7 +28,7 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group_name|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :messages
@@ -40,8 +40,8 @@ accepts_nested_attributes_for :members
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user_id|integer|null: false, refference|
+|group_id|integer|null: false, refference|
 
 ### Association
 - belongs_to :group
