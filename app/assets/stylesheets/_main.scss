@@ -1,4 +1,4 @@
 // ラベルがクリックされた時にファイルフォームを開くことができる
-%label.upload-label{for: "upload-icon"}
-  %i.fa.fa-picture-o
-  = f.file_field :image, id: "upload-icon"
+// %label.upload-label{for: "upload-icon"}
+//   %i.fa.fa-picture-o
+  // = f.file_field :image, id: "upload-icon"
