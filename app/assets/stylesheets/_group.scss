@@ -1,0 +1,88 @@
+// 書き方@mixin mixin名() {}
+// 呼び出し@include
+// 引数あり
+// @mixin hoge($color: #ff, $size: 1rem) {
+//   color: $color;
+//   font-size: $size;
+// display: flex;フレックスボックスにする
+
+@mixin font-bold($px) {
+  font-size: $px;
+  color: $siro;
+  font-weight: bold;
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  .group {
+    width: 300px;
+    height: 100vh;
+    flex-direction: row;
+    .group-top {
+      height: 100px;
+      padding: 0 20px;
+      position: relative;
+      background-color: $g-top;
+      // 以下３行で子要素のブロック上下中央
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // ここまで
+      .top-box {
+        height: 16px;
+        line-height: 16px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        // justify-content: space-between;
+        // 各アイテムを均等に配置し最初のアイテムは先頭に寄せ、最後のアイテムは末尾に寄せる
+        @include font-bold(16px);
+        .box__user-name {
+          flex-direction: row;
+        }
+        .box__menu {
+          display: flex;
+          list-style: none;
+          .menu__new-group {
+            flex-direction: row;
+            margin-left: 0.3rem;
+            a {
+              @include font-bold(16px);
+            }
+          }
+          .menu__edit-account {
+            margin-left: 0.3rem;
+            a {
+              @include font-bold(16px);
+            }
+          }
+        }
+      }
+    }
+    .group-body{
+      padding: 20px 20px 0;
+      background-color: $g-bottom;
+      height: calc(100vh - 100px);
+      overflow: scroll;
+      a {
+        text-decoration: none;
+        // リンク下線消し
+        .group-box {
+          margin-bottom: 40px;
+          height: 31px;
+          .group-name {
+            margin-bottom: 5px;
+            @include font-bold(15px);
+          }
+          .group__latest-message {
+            @include font-bold(11px);
+          }
+        }
+      }
+    }
+  }
+}
+
+

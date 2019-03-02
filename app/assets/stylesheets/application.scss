@@ -1,5 +1,11 @@
 // 全てを読み込むメインファイル
 @import "./reset";
+// リセットcss
 @import "./variable";
+// 変数
 @import "font-awesome";
-@import "./main";
+// アイコン
+@import "./group";
+// グループ部分（左側）
+@import "./message";
+// メッセージ部分

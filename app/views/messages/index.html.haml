@@ -8,35 +8,36 @@
           %li.menu__new-group
             = link_to "link_path" do
               %i.fa.fa-edit
-
           %li.menu__edit-account
             = link_to "link_path" do
               %i.fa.fa-cog
-
     .group-body
       / - @karihensuu.each do |group|
       = render 'group', collection: @group, as: :group
       -#as以降はeachの変数
+      = render 'group'
+      = render 'group'
   .message
     .message-header
       .header-box
-        %h2.header-box__currnt-group test-group
+        %h2.header-box__current-group test-group
         %ul.header-box__member-list
-          %member aさん
-          %member bさん
+          Member:
+          = render 'user'
+          = render 'user'
       = link_to "link_path" do
         .header__edit-btn Edit
     .message-main
-
       = render 'message'
-
+      = render 'message'
+      = render 'message'
     .form
       %form{:action => "form_path", :method => "post"}
         .input-box
           %input{:name => "massage", :type => "text", :placeholder => "type a message"}
+
           %label.input-box__image{:for => "message-image"}
             %i.fa.fa-image
-
             %input#message-image.input-box__image__file{:name => "message[image]", :type => "file"}/
         %input.submit-btn{:name => "commit", :type => "submit", "data-disable-with" => "Send", :value => "Send"}/
         / data-disable-with2回目以降も送信

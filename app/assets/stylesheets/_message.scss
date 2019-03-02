@@ -1,0 +1,83 @@
+@mixin font12() {
+  font-size: 12px;
+  color: $m-time;
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  .message {
+    width: calc(100vw - 300px);
+    &-header {
+      overflow: scroll;
+      border-bottom: solid 1px $border;
+      display: flex;
+      padding: 0 40px;
+      height: 100px;
+      .header-box {
+        margin-top: 35px;
+        flex-direction: row;
+        &__current-group {
+          font-size: 20px;
+          color: $kuro;
+          margin-bottom: 15px;
+        }
+        &__member-list {
+          @include font12();
+          list-style: none;
+          .member {
+            @include font12();
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+        .header__edit-btn {
+          position: absolute;
+          border: solid 1px $mizuiro;
+          color: $mizuiro;
+          height: 40px;
+          line-height: 40px;
+          padding: 0 20px;
+          margin-top: 28px;
+          right: 40px;
+        }
+      }
+    }
+    .message-main {
+      padding: 46px 40px;
+      .main__box {
+        padding-bottom: 40px;
+        &-top {
+          margin-bottom: 10px;
+          display: flex;
+          .top-box__talker{
+            flex-direction: row;
+            color: $m-user;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          .top-box__date{
+            @include font12();
+            padding-left: 10px;
+          }
+        }
+        .main__text {
+          font-size: 14px;
+          margin-bottom: 10px;
+          color: $m-user;
+        }
+      }
+    }
+    .form {
+      height: 90px;
+      padding: 20px 40px;
+      background-color: $form;
+      form {
+        display: flex;
+      }
+    }
+  }
+}
+
