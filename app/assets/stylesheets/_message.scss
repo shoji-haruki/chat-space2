@@ -10,7 +10,6 @@
   .message {
     width: calc(100vw - 300px);
     &-header {
-      overflow: scroll;
       border-bottom: solid 1px $border;
       display: flex;
       padding: 0 40px;
@@ -47,6 +46,9 @@
     }
     .message-main {
       padding: 46px 40px;
+      height: calc(100vh - 190px);
+      overflow: scroll;
+      background-color: $haikei;
       .main__box {
         padding-bottom: 40px;
         &-top {
@@ -76,6 +78,46 @@
       background-color: $form;
       form {
         display: flex;
+        .input-box {
+          flex-direction: row;
+          position: relative;
+          height: 50px;
+          width: 100%;
+          input {
+            border: none;
+            height: 50px;
+            width: 100%;
+            color: $m-user;
+            font-size: 16px;
+            padding: 0 40px 0 10px;
+          }
+          // label名
+          .input-box__image {
+            position: absolute;
+            cursor: pointer;
+            font-size: 130%;
+            top: 10px;
+            right: 10px;
+            // ここより下イメージの中
+            i {
+              font-size: inherit;
+              // 引き継ぎ
+            }
+            input {
+              display: none;
+            }
+          }
+        }
+        .submit-btn {
+          height: 50px;
+          background-color: $mizuiro;
+          width: 100px;
+          line-height: 50px;
+          color: $siro;
+          cursor: pointer;
+          margin-left: 15px;
+          padding: 0 30px;
+        }
       }
     }
   }
