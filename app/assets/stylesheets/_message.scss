@@ -7,14 +7,14 @@
   margin: 0;
   padding: 0;
   display: flex;
-  .message {
+  &__message {
     width: calc(100vw - 300px);
-    &-header {
+    &__header {
       border-bottom: solid 1px $border;
       display: flex;
       padding: 0 40px;
       height: 100px;
-      .header-box {
+      &__box {
         margin-top: 35px;
         flex-direction: row;
         &__current-group {
@@ -25,14 +25,14 @@
         &__member-list {
           @include font12();
           list-style: none;
-          .member {
+          &__member {
             @include font12();
           }
         }
       }
       a {
         text-decoration: none;
-        .header__edit-btn {
+        .content__message__header__link__edit-btn {
           position: absolute;
           border: solid 1px $mizuiro;
           color: $mizuiro;
@@ -44,41 +44,41 @@
         }
       }
     }
-    .message-main {
+    &__main {
       padding: 46px 40px;
       height: calc(100vh - 190px);
       overflow: scroll;
       background-color: $haikei;
-      .main__box {
+      &__box {
         padding-bottom: 40px;
         &-top {
           margin-bottom: 10px;
           display: flex;
-          .top-box__talker{
+          &__talker {
             flex-direction: row;
             color: $m-user;
             font-size: 16px;
             font-weight: bold;
           }
-          .top-box__date{
+          &__date {
             @include font12();
             padding-left: 10px;
           }
         }
-        .main__text {
+        &__text {
           font-size: 14px;
           margin-bottom: 10px;
           color: $m-user;
         }
       }
     }
-    .form {
+    &__form {
       height: 90px;
       padding: 20px 40px;
       background-color: $form;
       form {
         display: flex;
-        .input-box {
+        .content__message__form__main-form__input-box {
           flex-direction: row;
           position: relative;
           height: 50px;
@@ -92,7 +92,7 @@
             padding: 0 40px 0 10px;
           }
           // label名
-          .input-box__image {
+          &__image {
             position: absolute;
             cursor: pointer;
             font-size: 130%;
@@ -108,7 +108,7 @@
             }
           }
         }
-        .submit-btn {
+        .content__message__form__main-form__submit-btn {
           height: 50px;
           background-color: $mizuiro;
           width: 100px;

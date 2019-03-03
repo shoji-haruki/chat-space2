@@ -16,11 +16,11 @@
   margin: 0;
   padding: 0;
   display: flex;
-  .group {
+  &__group {
     width: 300px;
     height: 100vh;
     flex-direction: row;
-    &-top {
+    &__header {
       height: 100px;
       padding: 0 20px;
       position: relative;
@@ -30,7 +30,7 @@
       justify-content: center;
       align-items: center;
       // ここまで
-      .top-box {
+      &__box {
         height: 16px;
         line-height: 16px;
         width: 100%;
@@ -39,20 +39,20 @@
         // justify-content: space-between;
         // 各アイテムを均等に配置し最初のアイテムは先頭に寄せ、最後のアイテムは末尾に寄せる
         @include font-bold(16px);
-        .box__user-name {
+        &__user-name {
           flex-direction: row;
         }
-        .box__menu {
+        &__menu {
           display: flex;
           list-style: none;
-          .menu__new-group {
+          &__new-group {
             flex-direction: row;
             margin-left: 0.3rem;
             a {
               @include font-bold(16px);
             }
           }
-          .menu__edit-account {
+          &__edit-account {
             margin-left: 0.3rem;
             a {
               @include font-bold(16px);
@@ -61,7 +61,7 @@
         }
       }
     }
-    .group-body{
+    &__body{
       padding: 20px 20px 0;
       background-color: $g-bottom;
       height: calc(100vh - 100px);
@@ -69,14 +69,14 @@
       a {
         text-decoration: none;
         // リンク下線消し
-        .group-box {
+        .content__group__body__box {
           margin-bottom: 40px;
           height: 31px;
-          .group-name {
+          &__group-name {
             margin-bottom: 5px;
             @include font-bold(15px);
           }
-          .group__latest-message {
+          &__latest-message {
             @include font-bold(11px);
           }
         }

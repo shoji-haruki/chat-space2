@@ -1,45 +1,45 @@
 -#インデックスページ
 .content
-  .group
-    .group-top
-      .top-box
-        %p.box__user-name test-user
-        %ul.box__menu
-          %li.menu__new-group
+  .content__group
+    .content__group__header
+      .content__group__header__box
+        %p.content__group__header__box__user-name test-user
+        %ul.content__group__header__box__menu
+          %li.content__group__header__box__menu__new-group
             = link_to "link_path" do
               %i.fa.fa-edit
-          %li.menu__edit-account
+          %li.content__group__header__box__menu__edit-account
             = link_to "link_path" do
               %i.fa.fa-cog
-    .group-body
+    .content__group__body
       / - @karihensuu.each do |group|
       = render 'group', collection: @group, as: :group
       -#as以降はeachの変数
       = render 'group'
       = render 'group'
-  .message
-    .message-header
-      .header-box
-        %h2.header-box__current-group test-group
-        %ul.header-box__member-list
+  .content__message
+    .content__message__header
+      .content__message__header__box
+        %h2.content__message__header__box__current-group test-group
+        %ul.content__message__header__box__member-list
           Member:
           = render 'user'
           = render 'user'
       = link_to "link_path" do
-        .header__edit-btn Edit
-    .message-main
+        .content__message__header__link__edit-btn Edit
+    .content__message__main
       = render 'message'
       = render 'message'
       = render 'message'
-    .form
+    .content__message__form
       %form{:action => "form_path", :method => "post"}
-        .input-box
+        .content__message__form__main-form__input-box
           %input{:name => "massage", :type => "text", :placeholder => "type a message"}
 
-          %label.input-box__image{:for => "message-image"}
+          %label.content__message__form__main-form__input-box__image{:for => "message-image"}
             %i.fa.fa-image
-            %input#message-image.input-box__image__file{:name => "message[image]", :type => "file"}/
-        %input.submit-btn{:name => "commit", :type => "submit", "data-disable-with" => "Send", :value => "Send"}/
+            %input#message-image.content__message__form__main-form__input-box__image__file{:name => "message[image]", :type => "file"}/
+        %input.content__message__form__main-form__submit-btn{:name => "commit", :type => "submit", "data-disable-with" => "Send", :value => "Send"}/
         / data-disable-with2回目以降も送信
 
 
