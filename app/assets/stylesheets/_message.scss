@@ -1,0 +1,125 @@
+@mixin font12() {
+  font-size: 12px;
+  color: $m-time;
+}
+
+.content {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  &__message {
+    width: calc(100vw - 300px);
+    &__header {
+      border-bottom: solid 1px $border;
+      display: flex;
+      padding: 0 40px;
+      height: 100px;
+      &__box {
+        margin-top: 35px;
+        flex-direction: row;
+        &__current-group {
+          font-size: 20px;
+          color: $kuro;
+          margin-bottom: 15px;
+        }
+        &__member-list {
+          @include font12();
+          list-style: none;
+          &__member {
+            @include font12();
+          }
+        }
+      }
+      a {
+        text-decoration: none;
+        .content__message__header__link__edit-btn {
+          position: absolute;
+          border: solid 1px $mizuiro;
+          color: $mizuiro;
+          height: 40px;
+          line-height: 40px;
+          padding: 0 20px;
+          margin-top: 28px;
+          right: 40px;
+        }
+      }
+    }
+    &__main {
+      padding: 46px 40px;
+      height: calc(100vh - 190px);
+      overflow: scroll;
+      background-color: $haikei;
+      &__box {
+        padding-bottom: 40px;
+        &-top {
+          margin-bottom: 10px;
+          display: flex;
+          &__talker {
+            flex-direction: row;
+            color: $m-user;
+            font-size: 16px;
+            font-weight: bold;
+          }
+          &__date {
+            @include font12();
+            padding-left: 10px;
+          }
+        }
+        &__text {
+          font-size: 14px;
+          margin-bottom: 10px;
+          color: $m-user;
+        }
+      }
+    }
+    &__form {
+      height: 90px;
+      padding: 20px 40px;
+      background-color: $form;
+      form {
+        display: flex;
+        .content__message__form__main-form__input-box {
+          flex-direction: row;
+          position: relative;
+          height: 50px;
+          width: 100%;
+          input {
+            border: none;
+            height: 50px;
+            width: 100%;
+            color: $m-user;
+            font-size: 16px;
+            padding: 0 40px 0 10px;
+          }
+          // label名
+          &__image {
+            position: absolute;
+            cursor: pointer;
+            font-size: 130%;
+            top: 10px;
+            right: 10px;
+            // ここより下イメージの中
+            i {
+              font-size: inherit;
+              // 引き継ぎ
+            }
+            input {
+              display: none;
+            }
+          }
+        }
+        .content__message__form__main-form__submit-btn {
+          height: 50px;
+          background-color: $mizuiro;
+          width: 100px;
+          line-height: 50px;
+          color: $siro;
+          cursor: pointer;
+          margin-left: 15px;
+          padding: 0 30px;
+        }
+      }
+    }
+  }
+}
+
