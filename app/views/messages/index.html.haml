@@ -3,14 +3,15 @@
   .content__group
     .content__group__header
       .content__group__header__box
-        %p.content__group__header__box__user-name test-user
+        %p.content__group__header__box__user-name
+          =current_user.name
         %ul.content__group__header__box__menu
           %li.content__group__header__box__menu__new-group
             = link_to "link_path" do
               =fa_icon "edit"
               / %i.fa.fa-edit
           %li.content__group__header__box__menu__edit-account
-            = link_to "link_path" do
+            = link_to edit_user_path(current_user) do
               =fa_icon "cog"
               / %i.fa.fa-cog
     .content__group__body
