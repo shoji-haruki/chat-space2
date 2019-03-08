@@ -12,8 +12,9 @@
             =fa_icon "cog"
   .content__group__body
     - current_user.groups.each do |group|
-      = link_to group_messages_path(group) do
-        .content__group__body__box
+      .content__group__body__box
+        = link_to group_messages_path(group) do
+
           .content__group__body__box__group-name
             = group.name
           .content__group__body__box__latest-message メッセージはまだありません。
