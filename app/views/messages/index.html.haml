@@ -1,34 +1,21 @@
 -#インデックスページ
 .content
-  .content__group
-    .content__group__header
-      .content__group__header__box
-        %p.content__group__header__box__user-name
-          =current_user.name
-        %ul.content__group__header__box__menu
-          %li.content__group__header__box__menu__new-group
-            = link_to new_group_path do
-              =fa_icon "edit"
-              / %i.fa.fa-edit
-          %li.content__group__header__box__menu__edit-account
-            = link_to edit_user_path(current_user) do
-              =fa_icon "cog"
-              / %i.fa.fa-cog
-    .content__group__body
-      / - @karihensuu.each do |group|
-      = render 'group', collection: @group, as: :group
-      -#as以降はeachの変数
-      = render 'group'
-      = render 'group'
+  = render 'side_bar'
+
+
+
+
+
   .content__message
     .content__message__header
       .content__message__header__box
-        %h2.content__message__header__box__current-group test-group
+        %h2.content__message__header__box__current-group
+          test-group
         %ul.content__message__header__box__member-list
           Member:
-          = render 'user'
-          = render 'user'
-      = link_to "#" do
+          .content__message__header__box__member-list__member
+          bさん
+      = link_to "#＃" do
         .content__message__header__link__edit-btn Edit
     .content__message__main
       = render 'message'
