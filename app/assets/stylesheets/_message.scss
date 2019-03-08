@@ -14,6 +14,7 @@
       display: flex;
       padding: 0 40px;
       height: 100px;
+      position:relative;
       &__box {
         margin-top: 35px;
         flex-direction: row;
@@ -24,8 +25,14 @@
         }
         &__member-list {
           @include font12();
+
           list-style: none;
+          float: left;
+
+
           &__member {
+
+            position:absolute;
             @include font12();
           }
         }

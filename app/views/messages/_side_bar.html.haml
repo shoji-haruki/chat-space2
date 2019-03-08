@@ -1,0 +1,23 @@
+.content__group
+  .content__group__header
+    .content__group__header__box
+      %p.content__group__header__box__user-name
+        =current_user.name
+      %ul.content__group__header__box__menu
+        %li.content__group__header__box__menu__new-group
+          = link_to new_group_path do
+            =fa_icon "edit"
+        %li.content__group__header__box__menu__edit-account
+          = link_to edit_user_path(current_user) do
+            =fa_icon "cog"
+  .content__group__body
+    - current_user.groups.each do |group|
+      = link_to group_messages_path(group) do
+        .content__group__body__box
+          .content__group__body__box__group-name
+            = group.name
+          .content__group__body__box__latest-message メッセージはまだありません。
+    / = link_to "link_path" do
+    /   .content__group__body__box
+    /     %p.content__group__body__box__group-name test-group
+    /     %p.content__group__body__box__latest-message さようなら
