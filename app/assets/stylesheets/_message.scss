@@ -18,6 +18,7 @@
       &__box {
         margin-top: 35px;
         flex-direction: row;
+        display: inline-block;
         &__current-group {
           font-size: 20px;
           color: $kuro;
@@ -27,7 +28,7 @@
           @include font12();
 
           list-style: none;
-          float: left;
+
 
 
           &__member {
@@ -58,11 +59,11 @@
       background-color: $haikei;
       &__box {
         padding-bottom: 40px;
-        &-top {
+        &__top {
           margin-bottom: 10px;
           display: flex;
           &__talker {
-            flex-direction: row;
+            // flex-direction: row;
             color: $m-user;
             font-size: 16px;
             font-weight: bold;
@@ -72,36 +73,43 @@
             padding-left: 10px;
           }
         }
-        &__text {
-          font-size: 14px;
-          margin-bottom: 10px;
-          color: $m-user;
+
+        .lower-message__content {
+        font-size: 14px;
+        margin-bottom: 10px;
+        color: $m-user;
         }
+
       }
     }
     &__form {
       height: 90px;
       padding: 20px 40px;
+      position:relative;
       background-color: $form;
       form {
         display: flex;
+
         .content__message__form__main-form__input-box {
           flex-direction: row;
           position: relative;
           height: 50px;
           width: 100%;
-          input {
+          .form__message {
             border: none;
             height: 50px;
             width: 100%;
             color: $m-user;
             font-size: 16px;
+            position:relative;
+
             padding: 0 40px 0 10px;
           }
           // label名
           &__image {
             position: absolute;
             cursor: pointer;
+
             font-size: 130%;
             top: 10px;
             right: 10px;
@@ -110,13 +118,14 @@
               font-size: inherit;
               // 引き継ぎ
             }
-            input {
+            .content__message__form__main-form__input-box__image__file {
               display: none;
             }
           }
         }
         .content__message__form__main-form__submit-btn {
           height: 50px;
+          // position: absolute;
           background-color: $mizuiro;
           width: 100px;
           line-height: 50px;
@@ -124,6 +133,7 @@
           cursor: pointer;
           margin-left: 15px;
           padding: 0 30px;
+          right:40px;
         }
       }
     }
