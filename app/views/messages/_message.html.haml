@@ -1,5 +1,11 @@
 .content__message__main__box
   .content__message__main__box__top
-    %p.content__message__main__box__top__talker aさん
-    %p.content__message__main__box__top__date 2019/03/01(Fri) 15:24:26
-  %p.content__message__main__box__text さようなら
+    %p.content__message__main__box__top__talker
+      = message.user.name
+    %p.content__message__main__box__top__date
+      = message.created_at.strftime("%Y/%m/%d %H:%M")
+  %p.content__message__main__box__text
+    - if message.content.present?
+      %p.lower-message__content
+        = message.content
+    = image_tag message.image.url, class: 'lower-message__image' if message.image.present?

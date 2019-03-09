@@ -10,28 +10,37 @@
     .content__message__header
       .content__message__header__box
         %h2.content__message__header__box__current-group
-          test-group
+          = @group.name
         %ul.content__message__header__box__member-list
-          Member:
+
           .content__message__header__box__member-list__member
-          bさん
-      = link_to "#" do
+            Member:
+            - @group.users.each do |user|
+              = user.name
+      = link_to edit_group_path(@group) do
         .content__message__header__link__edit-btn Edit
     .content__message__main
-      = render 'message'
-      = render 'message'
-      = render 'message'
+      = render @messages
     .content__message__form
-      %form{:action => "form_path", :method => "post"}
-        .content__message__form__main-form__input-box
-          %input{:name => "massage", :type => "text", :placeholder => "type a message"}
+      = form_for [@group, @message] do |f|
 
-          %label.content__message__form__main-form__input-box__image{:for => "message-image"}
-            =fa_icon "image"
-            / %i.fa.fa-image
-            %input#message-image.content__message__form__main-form__input-box__image__file{:name => "message[image]", :type => "file"}/
-        %input.content__message__form__main-form__submit-btn{:name => "commit", :type => "submit", "data-disable-with" => "Send", :value => "Send"}/
-        / data-disable-with2回目以降も送信
+        .content__message__form__main-form__input-box
+          = f.text_field :content, class: 'form__message', placeholder: 'type a message'
+          = f.label :image, class: 'content__message__form__main-form__input-box__image' do
+            = fa_icon 'picture-o', class: 'i'
+            = f.file_field :image, class: 'content__message__form__main-form__input-box__image__file'
+        = f.submit 'Send', class: 'content__message__form__main-form__submit-btn'
+
+      / %form{:action => "form_path", :method => "post"}
+      /   .content__message__form__main-form__input-box
+      /     %input{:name => "massage", :type => "text", :placeholder => "type a message"}
+
+      /     %label.content__message__form__main-form__input-box__image{:for => "message-image"}
+      /       =fa_icon "image"
+      /       / %i.fa.fa-image
+      /       %input#message-image.content__message__form__main-form__input-box__image__file{:name => "message[image]", :type => "file"}/
+      /   %input.content__message__form__main-form__submit-btn{:name => "commit", :type => "submit", "data-disable-with" => "Send", :value => "Send"}/
+
 
 
 
