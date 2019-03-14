@@ -1,6 +1,12 @@
 $(function(){
   function buildHTML(message){
-    var image = `<img src="${message.image}">` if message.image.present?
+    if(message.image != null) {
+      var image = `<img src="${message.image}">`
+    }else{
+      var image = ""
+    }
+    // var image = message.image || ""
+
     var html = `<div class="content__message__main__box">
   <div class="content__message__main__box__top">
     <p class="content__message__main__box__top__talker">
