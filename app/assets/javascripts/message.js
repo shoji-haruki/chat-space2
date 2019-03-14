@@ -1,11 +1,6 @@
 $(function(){
   function buildHTML(message){
-    if(message.image != null) {
-      var image = `<img src="${message.image}">`
-    }else{
-      var image = ""
-    }
-    // var image = message.image || ""
+    var image = (message.image != null) ? `<img src="${message.image}">` : ""
 
     var html = `<div class="content__message__main__box">
   <div class="content__message__main__box__top">
@@ -51,7 +46,7 @@ $(function(){
       alert('メッセージを入力して下さい');
     })
     .always(() => {
-    $(".form__submit").removeAttr("disabled");
+      $(".form__submit").removeAttr("disabled");
     });
     $('.content__message__main').animate({scrollTop: $('.content__message__main')[0].scrollHeight}, 'fast');
   })
