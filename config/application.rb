@@ -15,6 +15,7 @@ module ChatSpace
       g.test_framework false
     end
 
+    config.action_view.automatically_disable_submit_tag = false
     config.time_zone = 'Tokyo'
     config.i18n.default_locale = :ja
     # Settings in config/environments/* take precedence over those specified here.
