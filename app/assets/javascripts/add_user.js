@@ -47,21 +47,17 @@ function appendErrMsgToHTML(msg) {
     }
   });
 
-
-
   var group_member = $(".chat-group-user__name");
-
 function append(name, id) {
   var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
   <input name='group[user_ids][]' type='hidden' value='${ id }'>
   <p class='chat-group-user__name'>${ name }</p>
-  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn'>削除</a>
+  <a class='user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn' data-user-id="${ id }" data-user-name="${ name }">削除</a>
 </div>`
   group_member.append(html);
 }
 
   $('#user-search-result').on('click', '.user-search-add', function(){
-    // console.log("a");
   $(this).parent().empty();
   var name = $(this).attr("data-user-name");
   var id = $(this).attr("data-user-id");
@@ -69,27 +65,8 @@ function append(name, id) {
   });
 
   $('.chat-group-user__name').on('click', '.user-search-remove', function(){
-    // console.log("c");
-
-  // var user = {user_id: $(this).attr('data-user-id'), user_id: }
+  var user = {user_id: $(this).attr('data-user-id'), user_name: $(this).attr('data-user-name')};
   $(this).parent().empty();
-
-  // var name = $(this).attr("data-user-name");
-  // var id = $(this).attr("data-user-id");
-  // appendUser(user)
+  appendUser(user)
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
