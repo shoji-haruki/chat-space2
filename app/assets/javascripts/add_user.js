@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
 
 var user_list = $("#user-search-result");
 
@@ -47,7 +47,7 @@ function appendErrMsgToHTML(msg) {
     }
   });
 
-  var group_member = $(".chat-group-user__name");
+  var group_member = $("#chat-group-users");
 function append(name, id) {
   var html = `<div class='chat-group-user clearfix js-chat-member' id='chat-group-user-8'>
   <input name='group[user_ids][]' type='hidden' value='${ id }'>
@@ -64,7 +64,7 @@ function append(name, id) {
   append(name, id);
   });
 
-  $('.chat-group-user__name').on('click', '.user-search-remove', function(){
+  $('#chat-group-users').on('click', '.user-search-remove', function(){
   var user = {user_id: $(this).attr('data-user-id'), user_name: $(this).attr('data-user-name')};
   $(this).parent().empty();
   appendUser(user)
