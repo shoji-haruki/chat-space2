@@ -51,3 +51,4 @@ $(document).on('turbolinks:load', function() {
     $('.content__message__main').animate({scrollTop: $('.content__message__main')[0].scrollHeight}, 'fast');
   })
 })
+
