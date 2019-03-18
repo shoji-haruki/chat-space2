@@ -1,4 +1,4 @@
-.content__message__main__box
+.content__message__main__box{"data-message-id": message.id}
   .content__message__main__box__top
     %p.content__message__main__box__top__talker
       = message.user.name
@@ -9,3 +9,4 @@
       %p.lower-message__content
         = message.content
     = image_tag message.image.url, class: 'lower-message__image' if message.image.present?
+
