@@ -83,9 +83,14 @@ $(document).on('turbolinks:load', function() {
     })
 
     .done(function(data){
-      var html = buildHTML(data);
-      $('.content__message__main').append(html)
-      $("#message_form")[0].reset();
+      if (data.length != 0) {
+        var html = buildHTML(data);
+        $('.content__message__main').append(html)
+        $("#message_form")[0].reset();
+        $('.content__message__main').animate({scrollTop: $('.content__message__main')[0].scrollHeight}, 'fast');
+      }else{
+        alert('メッセージを入力して下さい');
+      }
     })
 
     .fail(function(){
@@ -94,7 +99,6 @@ $(document).on('turbolinks:load', function() {
     .always(() => {
       $(".form__submit").removeAttr("disabled");
     });
-    $('.content__message__main').animate({scrollTop: $('.content__message__main')[0].scrollHeight}, 'fast');
   })
 })
 
