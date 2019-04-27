@@ -1,4 +1,6 @@
 -#インデックスページ
+
+
 .content
   = render 'side_bar'
 
@@ -22,7 +24,7 @@
     .content__message__main
       = render @messages
     .content__message__form
-      = form_for [@group, @message] do |f|
+      = form_for [@group, @message], html: {id: 'message_form'} do |f|
 
         .content__message__form__main-form__input-box
           = f.text_field :content, class: 'form__message', placeholder: 'type a message'
