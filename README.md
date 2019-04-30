@@ -1,9 +1,12 @@
 # README
 Name
 ====
-chat-space
+chat-space2(Tech Expert Curriculum, Chat App, Completed)
 
 ## Demo
+[![Image from Gyazo](https://i.gyazo.com/d94fa79c289d2cf6d6cfbd0b0fd437b2.png)](https://gyazo.com/d94fa79c289d2cf6d6cfbd0b0fd437b2)
+
+![chatspace-新規作成](https://user-images.githubusercontent.com/47352093/56942937-327f2c00-6b58-11e9-9c52-305c600eea41.gif)
 
 ## Overview
 - New user registration, edit
