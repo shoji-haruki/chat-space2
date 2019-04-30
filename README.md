@@ -1,7 +1,7 @@
 # README
 Name
 ====
-chat-space2(Tech Expert Curriculum, Chat App, Completed)
+chat-space2(Tech Expert Curriculum, Chat App)
 
 ## Demo
 [![Image from Gyazo](https://i.gyazo.com/d94fa79c289d2cf6d6cfbd0b0fd437b2.png)](https://gyazo.com/d94fa79c289d2cf6d6cfbd0b0fd437b2)
